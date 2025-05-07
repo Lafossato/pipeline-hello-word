@@ -4,8 +4,7 @@ name: Date Time Hello Word
 # Diz quando o pipeline deve ser executado. Ele roda sempre que alguém fizer um push para qualquer branch do repositório. 
 on:
   push:
-    branches:
-    - main
+    branches: [main]
 
 # Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:

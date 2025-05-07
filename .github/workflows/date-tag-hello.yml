@@ -6,9 +6,10 @@ on:
   push:
     branches:
     - main
-  release:
-    types: [created]
-#  Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
+  tags:
+    - '*'
+
+# Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:
   say-hello:
     runs-on: ubuntu-latest  # Irá usar a versão mais recente do Ubuntu em uma máquina virtual para rodar os comandos.
@@ -17,7 +18,7 @@ jobs:
         run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
-      - name: Get release tag
+      - name: Show current tag name
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
-    TAG_NAME="${{ github.ref_name }}"
-    echo "The tag is: $TAG_NAME"
+          echo "Current tag is: ${GITHUB_REF#refs/tags/}"

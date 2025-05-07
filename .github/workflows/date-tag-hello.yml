@@ -18,4 +18,4 @@ jobs:
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
       - name: Get release tag
-      run: echo "The tag is: ${{ github.ref_name }}"
+        run: echo "The tag is: ${{ github.ref_name }}"

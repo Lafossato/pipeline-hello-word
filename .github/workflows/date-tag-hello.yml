@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     tags:
-      - v1
+      - '*'
 
 # Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:
@@ -17,3 +17,10 @@ jobs:
         run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
+      - uses: actions/checkout@v4
+          - name: Criar Tag
+            run: |
+              git config --global user.email lari.fossato@gmail.com
+              git config --global user.name Lafossato
+              git tag -a v1.0 -m "Versão 1.0"
+              git push origin v1.0

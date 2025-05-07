@@ -1,0 +1,15 @@
+# Dá um nome ao pipeline. Neste caso, o nome visível no GitHub Actions será "Hello World Pipeline"
+name: Hello World Pipeline
+
+# Diz quando o pipeline deve ser executado. Ele roda sempre que alguém fizer um push para qualquer branch do repositório. 
+on: [push]
+
+#  Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Irá usar a versão mais recente do Ubuntu em uma máquina virtual para rodar os comandos.
+    steps: # Define as etapas (steps) que serão executadas dentro do job
+      - name: Print Hello World # Criado o nome para a etapa dentro do steps
+        run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
+      - name: Data Time
+        run: date +%Y-%m-%d %T

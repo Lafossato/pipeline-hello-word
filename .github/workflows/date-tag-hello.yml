@@ -20,9 +20,3 @@ jobs:
       - uses: actions/checkout@v4
       - name: Criar Tag
         run: |
-          export TZ=America/Sao_Paulo
-          TAG_NAME="v$(date +'%Y%m%d-%H%M%S')"
-          git config --global user.name "Lafossato"
-          git config --global user.email "lari.fossato@gmail"
-          git tag $TAG_NAME
-          git push origin $TAG_NAME

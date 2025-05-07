@@ -17,5 +17,5 @@ jobs:
         run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
-      - name: tags
-        run: 
+      - name: Get release tag
+      run: echo "The tag is: ${{ github.ref_name }}"

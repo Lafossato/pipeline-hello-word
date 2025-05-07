@@ -12,6 +12,4 @@ jobs:
       - name: Print Hello World # Criado o nome para a etapa dentro do steps
         run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
       - name: Data Time
-        run: |
-    export TZ=America/Sao_Paulo
-    date "+%d/%m/%Y %H:%M:%S"
+        run: data "+%Y-%m-%d %T"

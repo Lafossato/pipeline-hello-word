@@ -1,9 +1,13 @@
 # Dá um nome ao pipeline. Neste caso, o nome visível no GitHub Actions será "Hello World Pipeline"
-name: Hello World Pipeline
+name: Date Time Hello Word
 
 # Diz quando o pipeline deve ser executado. Ele roda sempre que alguém fizer um push para qualquer branch do repositório. 
-on: [push]
-
+on:
+  push:
+    branches:
+    - main
+  release:
+  types: [created]
 #  Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:
   say-hello:
@@ -13,3 +17,5 @@ jobs:
         run: echo "Hello World" # É o comando que será executado, no caso, irá imprimir o Hello Word
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
+      - name: tags
+        run: 

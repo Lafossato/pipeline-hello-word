@@ -5,6 +5,8 @@ name: Date Time Hello Word
 on:
   push:
     branches: [main]
+    tags:
+      - v1
 
 # Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:

@@ -18,9 +18,9 @@ jobs:
       - name: Data Time
         run: date "+%d/%m/%Y %H:%M:%S"
       - uses: actions/checkout@v4
-          - name: Criar Tag
-            run: |
-              git config --global user.email lari.fossato@gmail.com
-              git config --global user.name Lafossato
-              git tag -a v1.0 -m "Versão 1.0"
-              git push origin v1.0
+      - name: Criar Tag
+        run: |
+          git config --global user.email "lari.fossato@gmail.com"
+          git config --global user.name "Lafossato"
+          git tag -a v1.0 -m "Versão 1.0"
+          git push origin v1.0

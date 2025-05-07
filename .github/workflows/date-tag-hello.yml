@@ -6,6 +6,8 @@ on:
   push:
     branches:
     - main
+  release:
+    types: [created]
 #  Define um job (uma tarefa ou conjunto de etapas) para identificar e dentro do job criou nome chamado "say-hello"
 jobs:
   say-hello:

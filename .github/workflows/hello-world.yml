@@ -1,0 +1,10 @@
+name: Hello World Pipeline
+
+on: [push]  # Executa quando fizer um push no repositório
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Usa um servidor com Ubuntu
+    steps:
+      - name: Print Hello World
+        run: echo "Hello World"
